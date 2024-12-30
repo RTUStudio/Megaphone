@@ -1,0 +1,3 @@
+notFound:
+  item: "<red>The megaphone item does not exist</red>"
+needItem: "<red>You need a megaphone item to use the megaphone</red>"
