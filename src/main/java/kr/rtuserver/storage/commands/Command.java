@@ -33,7 +33,6 @@ public class Command extends RSCommand<Megaphone> {
                     Component component = ComponentFormatter.mini(megaphoneConfig.getFormat())
                             .replaceText(TextReplacementConfig.builder().matchLiteral("{message}").replacement(message).build());
                     chat.broadcastAll(component);
-                    chat.announce(player, getMessage().get(player, "trigger"));
                 } else chat.announce(player, getMessage().get(player, "needItem"));
             } else chat.announce(player, getMessage().get(player, "notFound.item"));
         } else chat.announce(getSender(), getCommon().getMessage("onlyPlayer"));
