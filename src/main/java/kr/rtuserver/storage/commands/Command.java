@@ -17,7 +17,7 @@ public class Command extends RSCommand<Megaphone> {
     private final MegaphoneConfig megaphoneConfig;
 
     public Command(Megaphone plugin) {
-        super(plugin, plugin.getMegaphoneConfig().getCommand(), true);
+        super(plugin, plugin.getMegaphoneConfig().getCommand());
         this.megaphoneConfig = plugin.getMegaphoneConfig();
     }
 

@@ -21,7 +21,7 @@ public class Megaphone extends RSPlugin {
     @Override
     public void enable() {
         megaphoneConfig = new MegaphoneConfig(this);
-        registerCommand(new Command(this));
+        registerCommand(new Command(this), true);
     }
 
 }
