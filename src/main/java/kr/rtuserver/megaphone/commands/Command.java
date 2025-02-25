@@ -1,12 +1,12 @@
-package kr.rtuserver.storage.commands;
+package kr.rtuserver.megaphone.commands;
 
 import kr.rtuserver.framework.bukkit.api.command.RSCommand;
 import kr.rtuserver.framework.bukkit.api.command.RSCommandData;
-import kr.rtuserver.framework.bukkit.api.utility.compatible.ItemCompat;
+import kr.rtuserver.framework.bukkit.api.registry.CustomItems;
 import kr.rtuserver.framework.bukkit.api.utility.format.ComponentFormatter;
 import kr.rtuserver.framework.bukkit.api.utility.player.PlayerChat;
-import kr.rtuserver.storage.Megaphone;
-import kr.rtuserver.storage.config.MegaphoneConfig;
+import kr.rtuserver.megaphone.Megaphone;
+import kr.rtuserver.megaphone.config.MegaphoneConfig;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextReplacementConfig;
 import org.bukkit.entity.Player;
@@ -25,7 +25,7 @@ public class Command extends RSCommand<Megaphone> {
     public boolean execute(RSCommandData data) {
         PlayerChat chat = PlayerChat.of(getPlugin());
         if (getSender() instanceof Player player) {
-            ItemStack itemStack = ItemCompat.from(megaphoneConfig.getItem());
+            ItemStack itemStack = CustomItems.from(megaphoneConfig.getItem());
             if (itemStack != null) {
                 if (player.getInventory().containsAtLeast(itemStack, 1)) {
                     player.getInventory().removeItem(itemStack);

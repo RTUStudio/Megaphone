@@ -1,8 +1,8 @@
-package kr.rtuserver.storage;
+package kr.rtuserver.megaphone;
 
 import kr.rtuserver.framework.bukkit.api.RSPlugin;
-import kr.rtuserver.storage.commands.Command;
-import kr.rtuserver.storage.config.MegaphoneConfig;
+import kr.rtuserver.megaphone.commands.Command;
+import kr.rtuserver.megaphone.config.MegaphoneConfig;
 import lombok.Getter;
 
 public class Megaphone extends RSPlugin {
