@@ -1,7 +1,7 @@
 package kr.rtuserver.megaphone;
 
 import kr.rtuserver.framework.bukkit.api.RSPlugin;
-import kr.rtuserver.megaphone.command.Command;
+import kr.rtuserver.megaphone.command.MainCommand;
 import kr.rtuserver.megaphone.configuration.MegaphoneConfig;
 import lombok.Getter;
 
@@ -21,7 +21,7 @@ public class Megaphone extends RSPlugin {
     @Override
     public void enable() {
         megaphoneConfig = new MegaphoneConfig(this);
-        registerCommand(new Command(this), true);
+        registerCommand(new MainCommand(this), true);
     }
 
 }

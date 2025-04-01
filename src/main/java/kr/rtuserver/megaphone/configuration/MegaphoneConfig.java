@@ -1,6 +1,6 @@
 package kr.rtuserver.megaphone.configuration;
 
-import kr.rtuserver.framework.bukkit.api.config.RSConfiguration;
+import kr.rtuserver.framework.bukkit.api.configuration.RSConfiguration;
 import kr.rtuserver.megaphone.Megaphone;
 import lombok.Getter;
 import lombok.Setter;

@@ -11,11 +11,11 @@ import net.kyori.adventure.text.TextReplacementConfig;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-public class Command extends RSCommand<Megaphone> {
+public class MainCommand extends RSCommand<Megaphone> {
 
     private final MegaphoneConfig megaphoneConfig;
 
-    public Command(Megaphone plugin) {
+    public MainCommand(Megaphone plugin) {
         super(plugin, plugin.getMegaphoneConfig().getCommand());
         this.megaphoneConfig = plugin.getMegaphoneConfig();
     }
@@ -24,7 +24,7 @@ public class Command extends RSCommand<Megaphone> {
     public boolean execute(RSCommandData data) {
         Player player = player();
         if (player == null) {
-            chat.announce(sender(), common.getMessage("onlyPlayer"));
+            chat().announce(sender(), message().getCommon("onlyPlayer"));
             return true;
         }
         ItemStack itemStack = CustomItems.from(megaphoneConfig.getItem());
@@ -34,9 +34,9 @@ public class Command extends RSCommand<Megaphone> {
                 String message = String.join(" ", data.args());
                 Component component = ComponentFormatter.mini(megaphoneConfig.getFormat())
                         .replaceText(TextReplacementConfig.builder().matchLiteral("{message}").replacement(message).build());
-                chat.broadcastAll(component);
-            } else chat.announce(player, message.get(player, "needItem"));
-        } else chat.announce(player, message.get(player, "notFound.item"));
+                chat().broadcastAll(component);
+            } else chat().announce(player, message().get(player, "needItem"));
+        } else chat().announce(player, message().get(player, "notFound.item"));
         return true;
     }
 
