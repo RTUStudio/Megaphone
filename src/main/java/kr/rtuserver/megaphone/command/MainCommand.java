@@ -2,8 +2,8 @@ package kr.rtuserver.megaphone.command;
 
 import kr.rtuserver.framework.bukkit.api.command.RSCommand;
 import kr.rtuserver.framework.bukkit.api.command.RSCommandData;
+import kr.rtuserver.framework.bukkit.api.format.ComponentFormatter;
 import kr.rtuserver.framework.bukkit.api.registry.CustomItems;
-import kr.rtuserver.framework.bukkit.api.utility.format.ComponentFormatter;
 import kr.rtuserver.megaphone.Megaphone;
 import kr.rtuserver.megaphone.configuration.MegaphoneConfig;
 import net.kyori.adventure.text.Component;
