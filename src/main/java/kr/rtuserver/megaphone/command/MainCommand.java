@@ -6,6 +6,7 @@ import kr.rtuserver.framework.bukkit.api.format.ComponentFormatter;
 import kr.rtuserver.framework.bukkit.api.registry.CustomItems;
 import kr.rtuserver.megaphone.Megaphone;
 import kr.rtuserver.megaphone.configuration.MegaphoneConfig;
+import me.clip.placeholderapi.PlaceholderAPI;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.TextReplacementConfig;
 import org.bukkit.entity.Player;
@@ -32,7 +33,7 @@ public class MainCommand extends RSCommand<Megaphone> {
             if (player.getInventory().containsAtLeast(itemStack, 1)) {
                 player.getInventory().removeItem(itemStack);
                 String message = String.join(" ", data.args());
-                Component component = ComponentFormatter.mini(megaphoneConfig.getFormat())
+                Component component = ComponentFormatter.parse(player, megaphoneConfig.getFormat())
                         .replaceText(TextReplacementConfig.builder().matchLiteral("{message}").replacement(message).build());
                 chat().broadcastAll(component);
             } else chat().announce(player, message().get(player, "needItem"));
